@@ -1,0 +1,20 @@
+﻿@model CodeSampleRequirement.Models.ParamedOrder
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Orders</h2>
+<div>
+    <textarea rows="20" cols="100" id="orderListArea"></textarea>
+</div>
+<button type="button" id="getOrdersBtn">List</button>
+<div>
+    <form action="@Url.Action("Edit", "Order")">
+        <input type="text" name="orderId" value="" required />
+        <input type="submit" value="Edit Order" /> 
+    </form>
+</div>
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/OrderList.js"></script>

@@ -1,0 +1,14 @@
+﻿@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Edit Order Service </h2>
+<form action="@Url.Action("AddService", "Order")" method="post">
+    <input type="text" name="orderId" value="@ViewBag.OrderId" required />
+    <input type="text" name="serviceName" value="" required />
+
+    <button type="submit">Add Service</button>
+    <a href="@Url.Action("Cancel", "Order", new { orderId = ViewBag.OrderId })" class="btn btn-default">Cancel Order</a>
+    <a href="@Url.Action("SendToBilling", "Order", new { orderId = ViewBag.OrderId })" class="btn btn-default">Send to billing</a>
+</form>
